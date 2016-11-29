@@ -1,0 +1,30 @@
+{
+  "name": "reactandflux",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": " concurrently \" npm run compile \" \" npm run serve \" ",
+    "compile": "webpack --progress --watch",
+    "serve": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "babel-loader": "~5.3.2",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.3",
+    "express": "~4.14.0",
+    "flux": "~2.0.3",
+    "jsx-loader": "^0.13.2",
+    "morgan": "~1.7.0",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "serve-favicon": "~2.3.0",
+    "webpack": "^1.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "nodemon": "^1.11.0"
+  }
+}
