@@ -3,15 +3,16 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
     entry: {
-        app: __dirname+'/public/javascripts/app.jsx'
+        index: __dirname+'/public/js/index.jsx'
     },
     output: {
-        path: __dirname+'/public/javascripts/',
+        path: __dirname+'/public/js/',
         filename: '[name].js'
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
     },
+    devtool: 'eval-source-map',
     module: {
         loaders:[
             { test: /\.jsx$/, exclude: /node_modules/, loader: 'jsx-loader' },

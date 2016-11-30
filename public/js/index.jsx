@@ -1,7 +1,9 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 
+var MyItems = require('../components/myItemController');
+
 ReactDom.render(
-    <h1>Hello World!</h1>,
+    <MyItems />,
     document.querySelector('#app')
 );
