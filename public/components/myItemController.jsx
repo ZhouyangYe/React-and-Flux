@@ -1,7 +1,7 @@
 var React = require('react');
 var ListStore = require('../stores/ListStore');
 var ItemActions = require('../actions/ItemActions');
-var MyItem = require('./myItems');
+var MyItems = require('./myItems');
 
 var MyButtonController = React.createClass({
     getInitialState: function () {
@@ -12,6 +12,7 @@ var MyButtonController = React.createClass({
 
     componentDidMount: function() {
         ListStore.addChangeListener(this._onChange);
+        ItemActions.getItems();
     },
 
     componentWillUnmount: function() {
@@ -25,13 +26,18 @@ var MyButtonController = React.createClass({
     },
 
     createNewItem: function (event) {
-        ItemActions.addNewItem({"title":'Zhouyang',"description":'A handsome guy!!',"category":'Person',"url":'zhouyangbt.ca'});
+        ItemActions.addNewItem({"title":'Harry Potter',"description":'Harry Potter is a series of fantasy novels written by British author J. K. Rowling. The novels chronicle the life of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley,',"category":'Novel',"url":'zhouyangbt\.ca'});
+    },
+
+    deleteItem: function(id){
+        ItemActions.deleteItem(id);
     },
 
     render: function() {
-        return <MyItem
+        return <MyItems
             items={this.state.items}
-            onClick={this.createNewItem}
+            onCreate={this.createNewItem}
+            onDelete={this.deleteItem}
         />;
     }
 

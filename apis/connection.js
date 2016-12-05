@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://admin:admin@ds113678.mlab.com:13678/reactproject');
+mongoose.connect('mongodb://127.0.0.1:27017/reactflux');
 
 module.exports = mongoose;
